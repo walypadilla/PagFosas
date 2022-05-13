@@ -1,0 +1,111 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+
+    <%- include('../includes/section.ejs') %>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row mt-3 mb-3 services-text pt-5 pb-5">
+                <div class="col-lg">
+                    <h2>Nuestros Principales Serviciós</h2>
+                </div>
+                <div class="col-md-auto mr-5">
+                    <a href="https://api.whatsapp.com/send?phone=50377711861&text=Hola%20buen%20día%20deseo%20una%20cotizacion%20de%20sus%20servicios">
+                        <button type="button" class="btn btn-success"><i class="fab fa-whatsapp mr-2">                            
+                        </i>Solicita Nuestros Servicios</button>
+                    </a>
+                </div>
+            </div>
+
+            <section>
+                <div class="row mt-2">
+                    <div class="col-md-5">
+                        <p class="parrService">
+                            En <strong>Adalberto Rivera Services</strong> contamos con personal altamente capacitados y conocedores de los procesos adecuados de limpieza,
+                            mantenimiento, prevencio y todo lo relacionado a la <strong>Limpieza de Fosa Séptica y trampa de grasa</strong>.
+                         </p>
+                         <h4 class="text-center">Ofrecemos:</h4>
+                         <ul class="list-group list-group-flush">
+                             <li class="list-group-item"><i class="far fa-check-square m-2"></i>Seguridad</li>
+                             <li class="list-group-item"><i class="far fa-check-square m-2"></i>Confianza</li>
+                             <li class="list-group-item"><i class="far fa-check-square m-2"></i>Amabilidad</li>
+                             <li class="list-group-item"><i class="far fa-check-square m-2"></i>Profesionalismo</li>
+                            </ul>
+                    </div>
+                    <div class="col-md-6 justify-content-right">
+                        <div>
+                            <img src="/images/fosaServicio.jpeg" class="img-responsive imgServicio">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div> <!-- fin container -->
+
+        <div class="container">
+            <div class="col mt-4 text-center">
+                <h2 class="lineUp">Servicios 24/7 en todo el país.</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- cards  -->
+            <div class="row row-cols-1 row-cols-md-4 mt-4">
+                <% data.forEach( (datos) => { %>
+                <div class="card-deck col-md-4 mb-3" id="card">
+                    <div class="card shadow-lg rounded cardDark" >
+                        <div class="p-2">
+                            <img src="/images/<%= datos.imagen %>" class="card-img-top imgRedondo img-fluid"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-info"><strong><%= datos.nombre %></strong>
+                            </h4>
+                            <p class="card-text"><%= datos.mensaje %></p>
+                        </div>
+                        
+
+                    </div>
+
+
+                </div>
+                <% }); %>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="col mt-4 text-center">
+                <h2 class="lineUp">Viajes Express a todo el país.</h2>
+            </div>
+        </div>
+        <div class="container">
+            <!-- cards  -->
+            <div class="row row-cols-1 row-cols-md-4 mt-4">
+                <% dato.forEach( (viaje) => { %>
+                <div class="card-deck col-md-4 mb-3" id="card">
+                    <div class="card shadow-lg rounded cardDark" >
+                        <div class="p-2">
+                            <img src="/images/<%= viaje.imagen %>" class="card-img-top imgRedondo img-fluid"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-info"><strong><%= viaje.nombre %></strong>
+                            </h4>
+                            <p class="card-text"><%= viaje.mensaje %></p>
+                        </div>
+                        
+
+                    </div>
+
+
+                </div>
+                <% }); %>
+            </div>
+
+    </div>
+
+
+<%- include('../includes/end.ejs') %>
